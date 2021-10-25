@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
-// bool enabled = false;
+
 
 
 void main() {
@@ -28,7 +28,6 @@ class MyHomePage extends StatefulWidget {
 class _MyHomePageState extends State<MyHomePage> {
   BodyPart? defendingBodyPart;
   BodyPart? attackingBodyPart;
-
 
 
   @override
@@ -204,14 +203,17 @@ class _MyHomePageState extends State<MyHomePage> {
                   child: GestureDetector(
                     onTap: () {
                       setState(() {
-                        attackingBodyPart = null;
-                        defendingBodyPart = null;
+
+                        if(attackingBodyPart != null && defendingBodyPart != null) {
+                          attackingBodyPart = null;
+                          defendingBodyPart = null;
+                        }
                       });
                       },
                     child: ColoredBox(
                       color:
                       attackingBodyPart != null && defendingBodyPart != null
-                          ? const Color.fromRGBO(0, 0, 0, 87)
+                          ? Color.fromRGBO(0, 0, 0, 0.87)
                           : Color.fromRGBO(0, 0, 0, 0.38),
                       child: Center(
                         child: Text(
@@ -246,6 +248,9 @@ class _MyHomePageState extends State<MyHomePage> {
       attackingBodyPart = value;
     });
   }
+}
+
+class TapGO {
 }
 
 class BodyPart {
@@ -287,6 +292,7 @@ class BodyPartButton extends StatelessWidget {
     );
   }
 }
+
 
 
 
