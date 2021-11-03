@@ -74,7 +74,11 @@ class MyHomePageState extends State<MyHomePage> {
                   color: FightClubColors.centralBlock,
                   child: Center(
                     child: Text(
+<<<<<<< Updated upstream
+                      'Text: result of the move', //textResultMove(),
+=======
                      'Text: result of the move', //textResultMove(),
+>>>>>>> Stashed changes
                       style: TextStyle(
                         fontWeight: FontWeight.w400,
                         fontSize: 10,
@@ -100,7 +104,11 @@ class MyHomePageState extends State<MyHomePage> {
 
             GoButton(
               text:
+<<<<<<< Updated upstream
+              yourLives == 0 || enemysLives == 0 ? 'Start new game' : 'Go',
+=======
                   yourLives == 0 || enemysLives == 0 ? 'Start new game' : 'Go',
+>>>>>>> Stashed changes
               onTap: _onGoButtonClicked,
               color: _getGoButtonColor(),
             ),
@@ -210,6 +218,8 @@ class FightersInfo extends StatelessWidget {
   final int maxLivesCount;
   final int yourLivesCount;
   final int enemysLivesCount;
+<<<<<<< Updated upstream
+=======
 
   const FightersInfo({
     Key? key,
@@ -220,8 +230,22 @@ class FightersInfo extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+>>>>>>> Stashed changes
+
+  const FightersInfo({
+    Key? key,
+    required this.maxLivesCount,
+    required this.yourLivesCount,
+    required this.enemysLivesCount,
+  }) : super(key: key);
+
+<<<<<<< Updated upstream
+  @override
+  Widget build(BuildContext context) {
 
 
+=======
+>>>>>>> Stashed changes
 
     return Column(
       crossAxisAlignment: CrossAxisAlignment.center,
@@ -232,8 +256,13 @@ class FightersInfo extends StatelessWidget {
             children: [
               Container(
                 color: FightClubColors.backgroundYou,
+<<<<<<< Updated upstream
+                width: 180,
+                height: 160,
+=======
                         width: 180,
                         height: 160,
+>>>>>>> Stashed changes
                 child: Row(
                   children: [
                     Padding(
@@ -268,10 +297,17 @@ class FightersInfo extends StatelessWidget {
 
               Container(
                 color: FightClubColors.backgroundEnemy,
+<<<<<<< Updated upstream
+                width: 180,
+                height: 160,
+                child: Row(
+                  children: [
+=======
                         width: 180,
                         height: 160,
                 child: Row(
                     children: [
+>>>>>>> Stashed changes
                     Padding(
                       padding: const EdgeInsets.only(
                         left: 38,
@@ -286,6 +322,22 @@ class FightersInfo extends StatelessWidget {
                           Center(child: const SizedBox(height: 12)),
                           Image.asset(FightClubImages.enemyAvatar, height: 92, width: 92,),
                         ],),
+<<<<<<< Updated upstream
+                    ),
+                    Padding(
+                      padding: const EdgeInsets.only(
+                        left: 8,
+                        top: 23,
+                        right: 16,
+                        bottom: 27,
+                      ),
+                      child: LivesWidget(
+                        overallLivesCount: maxLivesCount,
+                        currentLivesCount: enemysLivesCount,
+                      ),
+                    ),],
+                ),
+=======
                     ),
                     Padding(
                       padding: const EdgeInsets.only(
@@ -300,6 +352,7 @@ class FightersInfo extends StatelessWidget {
                       ),
                     ),],
                     ),
+>>>>>>> Stashed changes
               ),
             ],),
 
@@ -312,6 +365,97 @@ class FightersInfo extends StatelessWidget {
 
 
 
+<<<<<<< Updated upstream
+=======
+
+//     return Column(
+//       children: [
+//         Column(
+//           children: [
+//             Container(
+//               child: SizedBox(
+//                 height: 160,
+//                 child: Row(
+//                   crossAxisAlignment: CrossAxisAlignment.stretch,
+//                   children: [
+//                     Container(
+//                       color: FightClubColors.backgroundYou,
+//                       width: 180,
+//                       height: 160,
+//                       child: Row(
+//                         children: [
+//                           Padding(
+//                             padding: const EdgeInsets.only(
+//                               left: 16, top: 27, right: 16, bottom: 27,
+//                             ),
+//                             child: LivesWidget(
+//                               overallLivesCount: maxLivesCount,
+//                               currentLivesCount: yourLivesCount,
+//                             ),
+//                           ),
+//                           Column(
+//                             children: [
+//                               const SizedBox(height: 16),
+//                               Text(
+//                                 'You',
+//                                 style: TextStyle(
+//                                     color: FightClubColors.darkGreyText),
+//                               ),
+//                               const SizedBox(height: 12),
+//                               Image.asset(
+//                                 FightClubImages.youAvatar, height: 92, width: 92,
+//                               ),
+//                             ],
+//                           ),
+//                         ],
+//                       ),
+//                     ),
+//
+//                     // ColoredBox(color: Colors.green, child: SizedBox(height: 44, width: 44),),
+//
+//                     Container(
+//                       color: FightClubColors.backgroundEnemy,
+//                       width: 180, height: 160,
+//                       child: Row(
+//                         children: [
+//                           Padding(
+//                             padding: const EdgeInsets.only(
+//                               left: 38, top: 0, right: 16, bottom: 0,
+//                             ),
+//                             child: Column(
+//                               children: [
+//                                 const SizedBox(height: 16),
+//                                 Text(
+//                                   'Enemy',
+//                                   style: TextStyle(
+//                                       color: FightClubColors.darkGreyText),),
+//                                 const SizedBox(height: 12),
+//                                 Image.asset(
+//                                   FightClubImages.enemyAvatar,
+//                                   height: 92, width: 92,
+//                                 ),
+//                               ],
+//                             ),
+//                           ),
+//                           LivesWidget(
+//                             overallLivesCount: maxLivesCount,
+//                             currentLivesCount: enemysLivesCount,
+//                           ),
+//                         ],
+//                       ),
+//                     ),
+//                   ],
+//                 ),
+//               ),
+//             ),
+//           ],
+//         ),
+//       ],
+//     );
+//   }
+// }
+
+>>>>>>> Stashed changes
 class ControlsWidget extends StatelessWidget {
   final BodyPart? defendingBodyPart;
   final ValueSetter<BodyPart> selectDefendingBodyPart;
@@ -320,10 +464,17 @@ class ControlsWidget extends StatelessWidget {
 
   const ControlsWidget(
       {Key? key,
+<<<<<<< Updated upstream
+        required this.defendingBodyPart,
+        required this.selectDefendingBodyPart,
+        required this.attackingBodyPart,
+        required this.selectAttackingBodyPart})
+=======
       required this.defendingBodyPart,
       required this.selectDefendingBodyPart,
       required this.attackingBodyPart,
       required this.selectAttackingBodyPart})
+>>>>>>> Stashed changes
       : super(key: key);
 
   @override
@@ -364,40 +515,6 @@ class ControlsWidget extends StatelessWidget {
         Expanded(
           child: Column(
             children: [
-<<<<<<< Updated upstream
-              SizedBox(width: 16),
-              Expanded(
-                child: SizedBox(height: 40,
-                  child: GestureDetector(
-                    onTap: () {
-                      setState(() {
-
-                        if(attackingBodyPart != null && defendingBodyPart != null) {
-                          attackingBodyPart = null;
-                          defendingBodyPart = null;
-                        }
-                      });
-                      },
-                    child: ColoredBox(
-                      color:
-                      attackingBodyPart != null && defendingBodyPart != null
-                          ? Color.fromRGBO(0, 0, 0, 0.87)
-                          : Color.fromRGBO(0, 0, 0, 0.38),
-                      child: Center(
-                        child: Text(
-                          'Go'.toUpperCase(),
-                          style: TextStyle(
-                              fontWeight: FontWeight.w900,
-                              fontSize: 16,
-                              color: Colors.white),
-                        ),
-                      ),
-                    ),
-                  ),
-                ),
-                ),
-              SizedBox(width: 16),
-=======
               Text(
                 'Attack'.toUpperCase(),
                 style: TextStyle(color: FightClubColors.darkGreyText),
@@ -420,7 +537,6 @@ class ControlsWidget extends StatelessWidget {
                 selected: attackingBodyPart == BodyPart.legs,
                 bodyPartSetter: selectAttackingBodyPart,
               ),
->>>>>>> Stashed changes
             ],
           ),
         ),
@@ -492,9 +608,9 @@ class BodyPartButton extends StatelessWidget {
 
   const BodyPartButton(
       {Key? key,
-      required this.bodyPart,
-      required this.selected,
-      required this.bodyPartSetter})
+        required this.bodyPart,
+        required this.selected,
+        required this.bodyPartSetter})
       : super(key: key);
 
   @override
@@ -522,3 +638,7 @@ class BodyPartButton extends StatelessWidget {
     );
   }
 }
+<<<<<<< Updated upstream
+
+=======
+>>>>>>> Stashed changes
