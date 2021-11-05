@@ -386,7 +386,7 @@ class LivesWidget extends StatelessWidget {
           );
         } else {
           return Padding(
-            padding: const EdgeInsets.symmetric(),
+            padding: const EdgeInsets.only(top: 4.0),
             child: Image.asset(FightClubIcons.heartEmpty, width: 18, height: 18),
           );
         }
