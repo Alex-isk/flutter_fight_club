@@ -13,11 +13,12 @@ class FightClubColors {
   static const darkGreyText = Color.fromRGBO(22, 22, 22, 1);
   static const whiteText = Color.fromRGBO(255, 255, 255, 0.87);
 
-  static const backgroundYou = Color.fromRGBO(255, 255, 255, 1);
-  static const backgroundEnemy = Color.fromRGBO(197, 209, 234, 1);
+  static const white = Color.fromRGBO(255, 255, 255, 1);
+  static const purple = Color.fromRGBO(197, 209, 234, 1);
 
-  static const centralBlock = Color.fromRGBO(197, 209, 234, 1);
+  // static const centralBlock = Color.fromRGBO(197, 209, 234, 1);
 }
+// background: rgba(255, 255, 255, 1);
 
 // background (цвет задника экрана)
 // greyButton (цвет кнопки серой)
