@@ -24,3 +24,4 @@ class FightResult {
     return 'FightResult{result: $result}';
   }
 }
+

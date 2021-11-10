@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_fight_club/pages/fight_page.dart';
+import 'package:flutter_fight_club/pages/statistics_page.dart';
 import 'package:flutter_fight_club/resource/fight_club_colors.dart';
 import 'package:flutter_fight_club/widgets/action_button.dart';
+import 'package:flutter_fight_club/widgets/secondary_action_button.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 class MainPage extends StatelessWidget {
@@ -22,12 +24,16 @@ class _MainPageContent extends StatelessWidget {
             SizedBox(height: 24),
             Center(
               child: Text(
-                'The\nFight\nClub',
+                'The\nFight\nClub'.toUpperCase(),
                 textAlign: TextAlign.center,
                 style: TextStyle(
                     fontSize: 30, color: FightClubColors.darkGreyText),
               ),
             ),
+
+
+
+
             Expanded(child: SizedBox()),
 
             FutureBuilder<String?>(
@@ -43,7 +49,29 @@ class _MainPageContent extends StatelessWidget {
               },
             ),
 
-            Expanded(child: SizedBox()),
+            Expanded(child: SizedBox(height: 8,)),
+
+
+
+
+
+
+
+            SecondaryActionButton(
+                text: 'Statistics'.toUpperCase(),
+              onTap: () {
+                Navigator.of(context).push(
+                  MaterialPageRoute(
+                    builder: (context) => StatisticsPage(),
+                  ),
+                );
+              },
+            ),
+
+
+
+            SizedBox(height: 16),
+
             ActionButton(
                 text: 'Start'.toUpperCase(),
                 onTap: () {
@@ -54,6 +82,7 @@ class _MainPageContent extends StatelessWidget {
                   );
                 },
                 color: FightClubColors.blackButton),
+
             SizedBox(height: 16),
           ],
         ),
