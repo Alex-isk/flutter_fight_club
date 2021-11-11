@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_fight_club/fight_result.dart';
 import 'package:flutter_fight_club/pages/fight_page.dart';
 import 'package:flutter_fight_club/pages/statistics_page.dart';
 import 'package:flutter_fight_club/resource/fight_club_colors.dart';
 import 'package:flutter_fight_club/widgets/action_button.dart';
+import 'package:flutter_fight_club/widgets/fight_result_widget.dart';
 import 'package:flutter_fight_club/widgets/secondary_action_button.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
@@ -31,34 +33,39 @@ class _MainPageContent extends StatelessWidget {
               ),
             ),
 
+            Expanded(child: SizedBox()),
 
-
+            Container(
+              child: FutureBuilder<String?>(
+                future: SharedPreferences.getInstance().then(
+                      (sharedPreferences) =>
+                      sharedPreferences.getString('last_fight_result'),
+                ),
+                builder: (context, snapshot) {
+                  if (!snapshot.hasData || snapshot.data == null) {
+                    return const SizedBox();
+                  }
+                  final FightResult fightResult = FightResult.getByName(snapshot.data!); // см. аннотацию fight_result.dart
+                  return Column(
+                    mainAxisSize: MainAxisSize.min,
+                    children: [
+                      Text('Last fight result',
+                        style: TextStyle(
+                            color: FightClubColors.darkGreyText,
+                            fontSize: 14),
+                      ),
+                      const SizedBox(height: 12,),
+                      FightResultWidget(fightResult: fightResult,),
+                    ],
+                  );
+                },
+              ),
+            ),
 
             Expanded(child: SizedBox()),
 
-            FutureBuilder<String?>(
-              future: SharedPreferences.getInstance().then(
-                (sharedPreferences) =>
-                    sharedPreferences.getString('last_fight_result'),
-              ),
-              builder: (context, snapshot) {
-                if (!snapshot.hasData || snapshot.data == null) {
-                  return const SizedBox();
-                }
-                return Center(child: Text(snapshot.data!));
-              },
-            ),
-
-            Expanded(child: SizedBox(height: 8,)),
-
-
-
-
-
-
-
             SecondaryActionButton(
-                text: 'Statistics'.toUpperCase(),
+              text: 'Statistics'.toUpperCase(),
               onTap: () {
                 Navigator.of(context).push(
                   MaterialPageRoute(
@@ -83,7 +90,7 @@ class _MainPageContent extends StatelessWidget {
                 },
                 color: FightClubColors.blackButton),
 
-            SizedBox(height: 16),
+            SizedBox(height: 12),
           ],
         ),
       ),

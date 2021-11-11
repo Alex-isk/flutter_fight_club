@@ -35,29 +35,3 @@ class ActionButton extends StatelessWidget {
   }
 }
 
-
-//
-// return Padding(
-//   padding: const EdgeInsets.symmetric(horizontal: 16),
-//   child: GestureDetector(
-//     onTap: onTap,
-//     child: SizedBox(
-//       height: 40,
-//       child: ColoredBox(
-//         color: color,
-//         child: Center(
-//           child: Text(
-//             text.toUpperCase(),
-//             style: TextStyle(
-//               fontWeight: FontWeight.w900,
-//               fontSize: 16,
-//               color: FightClubColors.whiteText,
-//             ),
-//           ),
-//         ),
-//       ),
-//     ),
-//   ),
-// );
-// }
-// }
